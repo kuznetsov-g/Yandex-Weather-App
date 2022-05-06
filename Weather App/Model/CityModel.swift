@@ -60,7 +60,7 @@ class CityModel {
 extension CityModel: CityWeatherDelegate {
     func getCityWeather(topCurrentTemperature: String, topImage: UIImage, weekDayWeather: [WeekDayWeather]) {
         let cityData = CityDataFromJSON(cityName: self.cityName
-                                        , topCurrentTemperature: topCurrentTemperature
+                                        , topCurrentTemperature: topCurrentTemperature 
                                         , topImage: topImage
                                         , weekDayWeather: weekDayWeather)
  
@@ -70,7 +70,6 @@ extension CityModel: CityWeatherDelegate {
     
 }
 
-Ç
 struct CityDataFromJSON {
     let cityName: String
     let topCurrentTemperature: String

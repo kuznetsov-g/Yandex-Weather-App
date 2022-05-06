@@ -52,7 +52,7 @@ class WeatherModel {
         }
     
     private func getWeatherInfo(weatherData: WeatherData) {
-        let topCurrentTemp = String(weatherData.current.temp)
+        let topCurrentTemp = String(Int(weatherData.current.temp)) + " °C"
         let topImage = self.getImage(iconName: weatherData.current.weather[0].icon)
         var weekdayWeatherArray : [WeekDayWeather] = []
         
@@ -68,8 +68,8 @@ class WeatherModel {
             
             weekDay = formatter.string(from:  Date(timeIntervalSince1970: Double(daileData.dt)))
             condition = daileData.weather[0].main
-            dayTemp = String(daileData.temp.day)
-            nightTemp = String(daileData.temp.night)
+            dayTemp = String(Int(daileData.temp.day))
+            nightTemp = String(Int(daileData.temp.night))
             icon = self.getImage(iconName: daileData.weather[0].icon)
             weekdayWeatherArray += [WeekDayWeather( weekDay: weekDay
                                                   , condition: condition
